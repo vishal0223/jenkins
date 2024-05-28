@@ -7,19 +7,25 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/vishal0223/jenkins.git'
             }
         }
-        stage('init') {
-            steps {
-                sh 'terraform init'
-            }
-        }
-        stage('plan') {
-            steps {
-                sh 'terraform plan'
-            }
-        }
-        stage('apply') {
-            steps {
-                sh 'terraform apply -auto-approve'
+        // stage('init') {
+        //     steps {
+        //         sh 'terraform init'
+        //     }
+        // }
+        // stage('plan') {
+        //     steps {
+        //         sh 'terraform plan'
+        //     }
+        // }
+        // stage('apply') {
+        //     steps {
+        //         sh 'terraform apply -auto-approve'
+        //     }
+        // }
+
+        stage{
+            steps{
+                sh 'terraform destroy -auto-approve'
             }
         }
     }
