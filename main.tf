@@ -7,7 +7,7 @@ resource "aws_instance" "FirstTfEc2" {
   key_name                    = "my-first-keypair"
   associate_public_ip_address = true
   tags = {
-    Name = "Firstec2-11"
+    Name = "Firstec2"
   }
 
 }
